@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 文章摘要工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 AI 文章摘要工具</h1>
+            <p>输入长文本，一键生成智能摘要</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <label for="inputText">输入文章内容：</label>
+                <textarea id="inputText" placeholder="粘贴或输入你想要摘要的文章内容...&#10;&#10;支持中英文，建议至少100字以上效果更好。"></textarea>
+                <div class="controls">
+                    <select id="summaryLength">
+                        <option value="short">简短摘要</option>
+                        <option value="medium" selected>中等长度</option>
+                        <option value="long">详细摘要</option>
+                    </select>
+                    <button id="summarizeBtn" onclick="generateSummary()">生成摘要</button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <label>生成的摘要：</label>
+                <div id="outputText" class="output-box">
+                    <p class="placeholder">摘要将在这里显示...</p>
+                </div>
+                <button id="copyBtn" onclick="copySummary()" style="display:none;">复制摘要</button>
+            </div>
+
+            <div id="loading" class="loading" style="display:none;">
+                <div class="spinner"></div>
+                <p>AI 正在生成摘要...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>使用 Hugging Face API 驱动 | 开源项目</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
